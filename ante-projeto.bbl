@@ -1,0 +1,79 @@
+\providecommand{\abntreprintinfo}[1]{%
+ \citeonline{#1}}
+\setlength{\labelsep}{0pt}\begin{thebibliography}{}
+\providecommand{\abntrefinfo}[3]{}
+\providecommand{\abntbstabout}[1]{}
+\abntbstabout{v-1.9.7 }
+
+\bibitem[Ankit 2024]{utkarsh2024}
+\abntrefinfo{Ankit}{ANKIT}{2024}
+{ANKIT, U. \emph{Transformer Neural Networks: A Step-by-Step Breakdown}. 2024.
+Dispon{\'\i}vel em:
+  \url{https://builtin.com/artificial-intelligence/transformer-neural-network}.}
+
+\bibitem[Barakat, Turk e Demiroglu 2024]{barakat2024}
+\abntrefinfo{Barakat, Turk e Demiroglu}{BARAKAT; TURK; DEMIROGLU}{2024}
+{BARAKAT, H.; TURK, O.; DEMIROGLU, C. Deep {L}earning-based expressive speech
+  synthesis: a systematic review of approaches, challenges, and resources.
+2024.}
+
+\bibitem[Basco et al. 2018]{basco2018}
+\abntrefinfo{Basco et al.}{BASCO et al.}{2018}
+{BASCO, A.~I. et al. \emph{Industria 4.0: fabricando el futuro}. Buenos Aires:
+  Inter-American Development Bank, 2018.}
+
+\bibitem[Bergmann 2024]{bergmann2024}
+\abntrefinfo{Bergmann}{BERGMANN}{2024}
+{BERGMANN, D. \emph{What is fine-tuning?} 2024. Disponível em:
+  \url{https://www.ibm.com/think/topics/fine-tuning}.
+Acessado em: 21 maio 2025.}
+
+\bibitem[Galv{ã}o e Ricarte 2019]{galvao2019}
+\abntrefinfo{Galv{ã}o e Ricarte}{GALV{ã}O; RICARTE}{2019}
+{GALV{ã}O, M. C.~B.; RICARTE, I. L.~M. Revisão sistemática da literatura:
+  Conceituação, produção e publicação.
+\emph{Logeion: Filosofia da Informação}, Rio de Janeiro, RJ, v.~6, n.~1, p.
+  57--73, 2019.}
+
+\bibitem[Hat 2024]{redhat2024}
+\abntrefinfo{Hat}{HAT}{2024}
+{HAT, R. \emph{What is Podman?} 2024. Disponível em:
+  \url{https://www.redhat.com/en/topics/containers/what-is-podman}.
+Acessado em: 18 maio 2025.}
+
+\bibitem[IBM 2025]{ibm2025}
+\abntrefinfo{IBM}{IBM}{2025}
+{IBM. \emph{Deploying software}. 2025. Disponível em:
+  \url{https://www.ibm.com/docs/en/zos/3.1.0?topic=task-deploying-software}.
+Acessado em: 18 maio 2025.}
+
+\bibitem[Nosowitz e Goodwin 2024]{nosowitz2024}
+\abntrefinfo{Nosowitz e Goodwin}{NOSOWITZ; GOODWIN}{2024}
+{NOSOWITZ, D.; GOODWIN, M. \emph{What is an API endpoint?} 2024. Disponível
+  em: \url{https://www.ibm.com/think/topics/api-endpoint}.
+Acessado em: 21 maio 2025.}
+
+\bibitem[Scapicchio e Forrest 2024]{scapicchio2024}
+\abntrefinfo{Scapicchio e Forrest}{SCAPICCHIO; FORREST}{2024}
+{SCAPICCHIO, M.; FORREST, A. \emph{What is single sign-on (SSO)?} 2024.
+  Disponível em: \url{https://www.ibm.com/think/topics/single-sign-on}.
+Acessado em: 21 maio 2025.}
+
+\bibitem[Susnjara e Smalley 2024]{susnjara2024}
+\abntrefinfo{Susnjara e Smalley}{SUSNJARA; SMALLEY}{2024}
+{SUSNJARA, S.; SMALLEY, I. \emph{What is Docker?} 2024. Disponível em:
+  \url{https://www.ibm.com/think/topics/docker}.
+Acessado em: 21 maio 2025.}
+
+\bibitem[Tokuda et al. 2013]{tokuda2013}
+\abntrefinfo{Tokuda et al.}{TOKUDA et al.}{2013}
+{TOKUDA, K. et al. Speech synthesis based on hidden markov models.
+\emph{Proceedings of the IEEE}, v.~101, n.~5, p. 1234--1252, 2013.}
+
+\bibitem[Vaswani et al. 2017]{vaswani2017}
+\abntrefinfo{Vaswani et al.}{VASWANI et al.}{2017}
+{VASWANI, A. et al. Attention is all you need. In:  NIPS. \emph{Advances in
+  Neural Information Processing Systems 30 (NIPS 2017}. Long Beach, Estados
+  Unidos, 2017.}
+
+\end{thebibliography}

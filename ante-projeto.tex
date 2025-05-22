@@ -1,0 +1,337 @@
+%-----------------------------------------------------------------
+% UNIOESTE - Ciência da Computação
+% 4o. ano - Trabalho de Conclusão de Curso
+% Profa. Teresinha Arnauts Hachisuca 
+%-----------------------------------------------------------------
+%DECLARAÇÃO DO TIPO DE DOCUMENTO, TAMANHO DA FOLHA E FONTE
+%-----------------------------------------------------------------
+\documentclass[
+	% -- opções da classe memoir --
+	12pt,				% tamanho da fonte
+% 	twoside,			% para impressão em verso e anverso. Oposto a oneside
+	a4paper,			% tamanho do papel. 
+	% -- opções da classe abntex2 --
+	%chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
+	%section=TITLE,		% títulos de seções convertidos em letras maiúsculas
+	%subsection=TITLE,	% títulos de subseções convertidos em letras maiúsculas
+	%subsubsection=TITLE,% títulos de subsubseções convertidos em letras maiúsculas
+	% -- opções do pacote babel --
+	english,			% idioma adicional para hifenização
+	brazil,				% o último idioma é o principal do documento
+	]{article}
+	
+%-----------------------------------------------------------------
+%DEFINIÇÕES DOS PACOTES UTILIZADOS
+%-----------------------------------------------------------------
+\usepackage{cmap}				% Mapear caracteres especiais no PDF
+\usepackage{lmodern}			% Usa a fonte Latin Modern			
+\usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
+\usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
+\usepackage{lastpage}			% Usado pela Ficha catalográfica
+%\usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
+\usepackage{color}				% Controle das cores
+\usepackage{graphicx}			% Inclusão de gráficos
+
+\usepackage[brazil]{babel}      % Permite traduzir termos do LateX para português Brasil.
+\usepackage{hyperref}           % Permite ativar hyperlinks
+\usepackage{algorithm}          % pacote que de suporte a representação de algoritmos.
+
+\usepackage{algorithmic}
+\usepackage[pdftex]{geometry}
+\usepackage{multirow}
+
+% ---
+% Pacotes de citações
+% ---
+\usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
+\usepackage[alf]{abntex2cite}	% Citações padrão ABNT
+%\citebrackets[]
+
+% --- 
+% CONFIGURAÇÕES DE PACOTES
+% --- 
+
+% ---
+% Configurações do pacote backref
+% Usado sem a opção hyperpageref de backref
+\renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
+
+% Texto padrão antes do número das páginas
+\renewcommand{\backref}{}
+
+% Define os textos da citação
+\renewcommand*{\backrefalt}[4]{
+	\ifcase #1 %
+		Nenhuma citação no texto.%
+	\or
+		Citado na página #2.%
+	\else
+		Citado #1 vezes nas páginas #2.%
+	\fi}%
+% ---
+
+%-----------------------------------------------------------------
+%               INICIO DO DOCUMENTO - CAPA
+%-----------------------------------------------------------------
+\begin{document}
+
+
+\begin{center}
+
+	\textsc{
+		\large
+			\\universidade estadual do oeste do paraná
+			\\unioeste - campus de foz do iguaçu
+			\\centro de engenharias e ciências exatas
+			\\curso de ciência da computação
+			\\[1 cm]tcc - trabalho de conclusão de curso
+	}
+	\\
+	[4 cm]
+	\large Proposta de Trabalho de Conclusão de Curso
+    \\
+	\textbf{
+	    \textsc{Interface de Voz da Operação (IVO)}
+    }
+	\\[5 cm]Vinicius de Oliveira Jimenez
+    \\Orientador(a): William Francisco da Silva
+    \\Co-orientador(es): Filipe Ventura Muggiati e Hilton Carlos Miranda Lessa
+    \\[2 cm]Foz do Iguaçu, 22 de maio de 2024
+    
+    
+\end{center}
+
+\thispagestyle{empty}
+
+%-----------------------------------------------------------------
+%               IDENTIFICAÇÃO DO PROJETO
+%-----------------------------------------------------------------
+\section{Identificação}
+    
+    \subsection{Área e Linha de Pesquisa} 
+    
+        \noindent Grande Área: Ciências Exatas e da Terra
+        \\Código: 1.00.00.00-3 
+    	\\[1 cm]Linha de Pesquisa: Ciência da Computação
+    	\\Código: 1.03.00.00-7
+    	\\[1 cm]Especialidade: Metodologia e Técnicas da Computação
+    	\\Código: 1.03.03.00-6 
+    	
+    	
+    \subsection{Palavras-chave}
+
+        \begin{enumerate}
+        	\item Transcrição de fala;
+        	\item Síntese de fala;
+        	\item \textit{Speech-To-Text (STT)};
+        	\item \textit{Text-To-Speech (TTS)};
+        	\item Indústria 4.0;
+        	\item Aplicação web;
+        	\item API.
+        \end{enumerate}
+
+
+
+%-----------------------------------------------------------------
+%               INTRODUÇÃO E JUSTIFICATIVA
+%-----------------------------------------------------------------
+\section{Introdução e Justificativa}
+
+A Indústria 4.0 surge a partir de uma nova fase caracterizada pela transformação digital ou informatização, e conectividade. Nesse sentido, a indústria se consolida com umas das principais protagonistas nos avanços em tecnologias, como Internet das Coisas (\textit{Internet of Things} — IoT), computação em nuvem e Inteligência Artificial (IA) \cite{basco2018}. Ainda, de acordo com \citeonline{basco2018}, a IA é um dos 10 (dez) pilares fundamentais da Indústria 4.0, fundamentada na criação de algoritmos capazes de possibilitar que os computadores processem informações com uma velocidade excepcional.
+
+No contexto industrial, a aplicação de algoritmos de IA possibilita o desenvolvimento de Redes Neurais — \textit{Neural Networks} (NNs), voltadas à automação de processos operacionais complexos e morosos, análise de grande volume de dados, dando apoio à tomada de decisões estratégicas, e resultando em uma gestão mais inteligente e otimizada das estações de trabalho \cite{basco2018}. Com essa finalidade, em 2019, o Departamento de Operação do Sistema (OPS.DT) da Itaipu Binacional (IB), criou um grupo de trabalho para analisar e indicar ações para modernizar os processos da divisão com base nos fundamentos da Industria 4.0.
+
+Este grupo de trabalho realizou uma análise de diversas tecnologias, com destaque para os assistentes virtuais acionados por comandos de voz. Tais sistemas são constituídos por um conjunto de módulos interdependentes, que operam de maneira integrada para viabilizar seu funcionamento. Dentro esses módulos, destaca-se aquele responsável pela conversão de fala em texto — \textit{Speech-To-Text} (STT), e o módulo responsável pela síntese de texto em fala — \textit{Text-To-Speech} (TTS). Diante disso, foi solicitado ao Centro de Gestão Energética (GE.DT) do Itaipu Parquetec o desenvolvimento de um sistema capaz de atender a essas demandas.
+
+A tecnologia de transcrição de fala em texto, também conhecida como reconhecimento automático de fala — \textit{Automatic Speech Recognition} (ASR), consiste na identificação de palavras pronunciadas e suas subsequente conversão em texto escrito. Esse campo tem apresentado avanços notáveis em termos de precisão e eficiência, impulsionados principalmente pelo progresso da IA. Um exemplo expressivo desse avanço é a introdução da arquitetura \textit{transformer}, desenvolvida pela Google \cite{vaswani2017}, representando um marco significativo ao permitir processamento de sentenças completas, em vez de palavras isoladas, por meio de mecanismos de atenção capazes de direcionar o foco às partes mais relevantes da entrada (áudio) \cite{utkarsh2024}.
+
+Para \citeonline{tokuda2013}, a síntese de texto para fala é uma técnica utilizada para gerar fala artificial que seja inteligível e com características naturais a partir de um texto de entrada. Analogamente aos modelos STT, os modelos TTS também evoluíram significativamente ao longo do tempo, resultando em sistemas capazes de gerar vozes quase indistinguíveis da fala humana. De acordo com \citeonline{barakat2024}, mesmo com técnicas avançadas, como modelos ocultos de Markov (HMMs) e modelos guassianos (GMMs), a fala gerada por esses métodos ainda era visivelmente artificial. O cenário alterou a partir do surgimento de aprendizado profundo — \textit{Deep Learning} (DL), dando início a aplicação de NNs na síntese de fala \cite{barakat2024}.
+
+Diante desse contexto, percebe-se a importância da adoção de um sistema para a realização de conversões \textit{Speech-to-Text} (STT) e \textit{Text-to-Speech} (TTS) no ambiente de supervisão de uma usina, podendo contribuir significativamente para o aumento da agilidade e eficiência operacional nas salas de controle. Em determinadas situações, o esforço cognitivo necessário para solicitar e receber informações por meio da fala é inferior ao exigido por textos escritos, o que possibilita a realização simultânea de múltiplas atividades por um mesmo indivíduo de forma mais intuitiva e natural.
+
+Adicionalmente, ao sistema proposto, especificamente, o módulo de STT, pode ser utilizado para realizar transcrições de ligações telefônicas entre o despachante e o operador nos centros de controle. Essas transcrições podem contribuir para facilitar a passagem de turno das equipes em tempo real, estabelecer conexões entre as ligações, eventos e registros para análises pós-operacionais, além de fornecer uma base de dados consultável para que as equipes revisem conversas anteriores durante o turno. 
+
+%-----------------------------------------------------------------
+%                       OBJETIVO
+%-----------------------------------------------------------------	
+\section{Objetivos}
+
+\subsection{Objetivo Geral}
+
+Este projeto tem como objetivo geral o desenvolvimento do sistema IVO, voltado à conversão de fala em texto (\textit{Speech-to-Text} – STT) e de texto em fala (\textit{Text-to-Speech} – TTS), bem como ao aprimoramento contínuo dos modelos de reconhecimento de fala. O sistema é composto por quatro aplicações integradas: uma aplicação web piloto, uma aplicação web destinada ao treinamento, uma API\footnote{Interface de programação de aplicações – \textit{Application Programming Interface} (API)} principal e uma API dedicada à IA.
+
+%-------------------------------------------------------------------------------
+
+\subsection{Objetivos Específicos}
+
+Dentre os principais objetivos específicos destacam-se:
+
+\begin{itemize}
+	\item Realizar levantamento e análise crítica de bibliotecas voltados à implementação de modelos STT e TTS;
+	
+	\item Projetar e implementar uma API dedicada à integração e execução dos modelos STT e TTS;
+	
+	\item Estruturar uma API para viabilizar o consumo unificado dos serviços desenvolvidos neste projeto e que internos da IB;
+	
+	\item Desenvolver uma aplicação \textit{web} que permita ao usuário final realizar transcrições de áudio e sínteses de fala consumindo os \textit{endpoints}\footnote{Um endpoint de API é um endereço onde a API recebe pedidos para acessar informações ou serviços disponíveis no servidor. \cite{nosowitz2024}} da API principal;
+	
+	\item Criar uma aplicação voltada à gestão e ao treinamento de modelos STT. 
+\end{itemize}
+
+%-------------------------------------------------------------------------------
+
+
+    	
+%-----------------------------------------------------------------
+%           PLANO DE TRABALHO E CRONOGRAMA DE EXECUÇÃO
+%-----------------------------------------------------------------	
+\section{Plano de Trabalho e Cronograma de Execução}
+
+Nessa seção pretende-se a apresentar o plano de trabalho e cronograma de execução,
+contemplando as atividades a serem desenvolvidas ao longo do trabalho.
+
+\begin{enumerate}
+	\item  Atividade 1: conduzir uma Revisão Sistemática da Literatura (RSL) com base em critérios bem definidos, a fim de identificar, avaliar e sintetizar pesquisas relevantes sobre tecnologias de transcrição de fala e síntese de fala, bem como arquiteturas utilizadas para a API,  e aplicações \textit{web}; \label{atv1}
+	
+	\item Atividade 2: elaborar o documentação do projeto e os protótipos de telas das aplicações piloto e de treinamento. Os artefatos resultantes desta atividade devem ser aprovados pelos responsáveis pelo projeto pelo lado da IB; \label{atv2}
+	
+	
+	\item Atividade 3: desenvolver a API responsável pela integração com os modelos STT e TTS, além de realizar o processo de ajuste fino – \textit{fine-tuning}\footnote{O ajuste fino ou \textit{fine-tuning} em ML é o processo de adaptar um modelo previamente treinado para tarefas ou casos de uso específicos \cite{bergmann2024}.}, para gerar novos modelos STT treinados; \label{atv3}
+	
+	
+	\item Atividade 4: implementar a API principal que atue como orquestradora do sistema, responsável pelo controle de fluxo entre os serviços, acesso ao banco de dados, autenticação, autorização, roteamento de requisições e demais funcionalidades; \label{atv4}
+	
+	\item Atividade 5: desenvolver a aplicação piloto que permita ao usuário realizar transcrições STT e sínteses TTS, utilizando os serviços da API principal; \label{atv5}
+	
+	\item Atividade 6: implementar a aplicação de treinamento dos modelos STT, com funcionalidades que incluam a listagem e visualização dos modelos disponíveis e dos áudios transcritos; \label{atv6}
+	
+	\item Atividade 7: executar testes que validem o funcionamento conjunto de todos os componentes do sistemas — APIs, modelos, aplicações \textit{web} e banco de dados — assegurando a comunicação correta entre os módulos da solução; \label{atv7}
+	
+	\item Atividade 8: redigir o texto da monografia. \label{atv8}
+\end{enumerate}
+
+
+Na Tabela \ref{tabela:cronograma} é apresentado o cronograma de execução das atividades apresentadas anteriormente nesta mesma seção.
+ 
+\begin{table}[ht]
+	\scriptsize
+	\centering
+	\begin{tabular}{|l|c|c|c|c|c|c|c|c|c|}
+		\hline &  \multicolumn{9}{|c|}{\textbf{Período}} \\ \cline{2-10}
+		\textbf{Atividades} & Jun & Jul & Ago & Set & Out & Nov & Dez & Jan & Fev \\ \hline \hline
+		\ref{atv1} - Atividade 1 & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & & & & & \\ \hline
+		\ref{atv2} - Atividade 2 & $\bullet$ & $\bullet$ & & & & & & & \\ \hline
+		\ref{atv3} - Atividade 3 & & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & & & \\ \hline
+		\ref{atv4} - Atividade 4 & & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & & & \\ \hline
+		\ref{atv5} - Atividade 5 & & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & & & & \\ \hline
+		\ref{atv6} - Atividade 6 & & & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & & & \\ \hline
+		\ref{atv7} - Atividade 7 & & & & & $\bullet$ & $\bullet$ & $\bullet$ &  &  \\ \hline
+		\ref{atv8} - Atividade 8 & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ \\ \hline
+	\end{tabular}
+	\caption{Cronograma de atividades}
+	\label{tabela:cronograma}
+\end{table}
+
+%-----------------------------------------------------------------
+%                   MATERIAL E MÉTODO
+%----------------------------------------------------------------- 
+
+\section{Material e Método}
+
+\subsection{Material}
+
+Serão utilizados os seguintes materiais e recursos para a implementação do sistema IVO:
+
+\begin{itemize}
+	\item Notebook: será utilizado um notebook do modelo Lenovo Legion Slim 5i com as seguintes configurações:
+		\begin{itemize}
+			\item Processador: Intel® Core™ i7-13700H de 13ª geração;
+			\item Sistema Operacional: Microsoft Windows 11 Pro;
+			\item Placa de vídeo: GPU para laptop NVIDIA® GeForce RTX™ 4050 6GB GDDR6;
+			\item Memória: 16 GB DDR5-5.200MHz (SODIMM)(2 x 8 GB);
+			\item Armazenamento: 512 GB SSD M.2 2280 PCIe Gen4 TLC.
+		\end{itemize}
+		
+	\item Subsistema do Windows Para Linux (WSL\footnote{\textit{Windows Subsystem Linux} (WSL).}): será utilizado um subsistema dentro do sistema operacional Windows devido a possibilidade de utilizar comandos Docker\footnote{Docker é uma plataforma \textit{open source} que possibilita aos desenvolvedores criar, executar, distribuir, atualizar e administrar contêineres de forma eficiente \cite{susnjara2024}.} via linha de comando. O subsistema possui as seguintes configurações:
+		\begin{itemize}
+			\item Distribuição: Ubuntu;
+			\item Versão: 22.04.3 LTS.
+		\end{itemize}
+		
+	\item Máquinas virtuais: serão utilizados duas máquinas virtuais — \textit{Virtual Machine} (VM) para realizar o \textit{deploy}\footnote{O \textit{deploy} de uma aplicação consiste em torná-la acessível para que possa ser utilizada por usuários finais ou integrada a outros sistemas \cite{ibm2025}} das aplicações necessárias. As VMs contam com as seguintes configurações:
+		\begin{itemize}
+			\item VM IVO API
+				\begin{itemize}
+					\item Sistema Operacional: Ubuntu 22.04 LTS;
+					\item Processadores: 8;
+					\item Memória: 17 GB;
+					\item Armazenamento: 80 GB.
+				\end{itemize}
+			\item VM IVO IA	
+				\begin{itemize}
+					\item Sistema Operacional: Ubuntu 22.04 LTS;
+					\item Processadores: 20;
+					\item Memória: 46 GB;
+					\item Armazenamento: 80 GB.
+				\end{itemize}
+		\end{itemize}
+		
+		
+	\item Gerenciamento de contêineres: será utilizado a ferramenta Podman que se destaca por ser \textit{open-source} não depender de um \textit{daemon}, tornando-o um alternativa segura e acessível \cite{redhat2024}. Além disso, é a tecnologia adotada pela IB;
+\end{itemize}
+
+
+\subsection{Método}
+
+Os métodos adotados para a realização das atividades serão organizados de acordo com as fases do plano de atividades (Tabela \ref{tabela:cronograma}). Algumas tarefas, por serem semelhantes, adotaram a mesma metodologia de execução.
+
+\begin{itemize}
+	\item \textbf{Revisão Sistemática da Literatura (RSL)}
+	
+		Realizar busca por referências bibliográficas utilizando a abordagem RSL. De acordo com \citeonline{galvao2019}, a ênfase desta técnica de revisão recai sobre a reprodutibilidade por parte de outros pesquisadores, detalhando de maneira explícita as bases de dados bibliográficas utilizadas, as estratégias de busca adotadas, em cada uma delas, o processo de seleção de artigos e textos científicos, bem como os critérios estabelecidos para inclusão e exclusão.
+		
+	\item \textbf{Documentação e prototipagem}
+	
+		Escrever a documentação do projeto empregando os padrões do centro GE.DT. Entende-se como documentação: documento de requisitos, visão geral do sistema, diagramas de classe e de casos de uso e manual do usuário. No que tange à prototipagem das telas das aplicações \textit{web}, a ferramenta utilizada para tal será o Figma\footnote{Site oficial do Figma: \url{https://www.figma.com/}}. Deve-se seguir o guia de estilos do centro GE.DT.
+		
+	
+	\item \textbf{Desenvolvimento das APIs}
+	
+		Inicialmente, criar os repositórios no GitLab\footnote{Site oficial do GitLab: \url{https://about.gitlab.com/}} interno do GE.DT. Após essa etapa inicial, iniciar a implementação das arquiteturas escolhidas para cada API, definindo suas devidas bibliotecas, o Sistema Gerenciador de Banco de Dados (SGBD) a ser utilizado. Para o caso da API de STT e TTS, definir modelos \textit{base} para testes iniciais. Ja à API principal, estudar métodos de comunicação entre as APIs. A autenticação e autorização será realizada utilizando o servidor de autenticação Keycloak\footnote{Site oficial do Keycloak: \url{https://www.keycloak.org/}}, utilizando a técnica de \textit{Single Sign-On} (SSO)\footnote{Single sign-on (SSO) é um método de login que permite ao usuário acessar vários sistemas usando um somente as credenciais, sem precisar se autenticar novamente em cada aplicação \cite{scapicchio2024}.}. 
+	
+	\item \textbf{Desenvolvimento das aplicações web}
+	
+		A metodologia de desenvolvimento das aplicações web abrange, de forma similar a do desenvolvimento de APIs, a criação dos repositórios no GitLab, bem como a definição das bibliotecas a serem utilizadas. Ademais, é imprescindível o estudo e a aplicação de técnicas de responsividade e acessibilidade, a fim de garantir que as aplicações sejam utilizáveis por todos os usuários e possam ser acessadas de maneira intuitiva e eficiente em diferentes dispositivos, incluindo \textit{smartphones} e \textit{tablets}, além de computadores e \textit{notebooks}.
+	
+\end{itemize}
+
+
+
+%-----------------------------------------------------------------
+%               CRITÉRIOS DE AVALIAÇÃO
+%-----------------------------------------------------------------
+\section{Critérios de Avaliação} 
+     
+Os resultados obtidos serão avaliados com base no desempenho das aplicações que compõem o sistema IVO, bem como no funcionamento integrado do sistema como um todo. Espera-se, entre outras funcionalidades, que o sistema seja capaz de transcrever fala em texto, sintetizar texto em fala, armazenar os áudios recebidos para posterior transcrição, permitir a avaliação das transcrições pelos usuários finais e, sobretudo, viabilizar o treinamento contínuo dos modelos de reconhecimento automático de fala STT. Ademais, o \textit{feedback} dos usuários finais da IB será um elemento relevante e primordial para aferir se a proposta atendeu aos objetivos estabelecidos.
+%-----------------------------------------------------------------
+%                       REFERÊNCIAS
+%----------------------------------------------------------------- 
+
+\newpage
+\renewcommand\refname{}
+\section{Referências}
+
+%Referencias bibliográficas que foram utilizadas para desenvolver a proposta de TCC.
+    \vspace{-4.3em}
+    \bibliography{referencias}
+    
+%-----------------------------------------------------------------
+%                   SÍNTESE BIBLIOGRÁFICA
+%----------------------------------------------------------------- 
+\section{Síntese Bibliográfica}
+
+%Referencias bibliográficas que se pretende utilizar para o desenvolvimento do trabalho.
+    \vspace{-3.5em}
+    \input{sintese.tex}
+ 
+\end{document}
