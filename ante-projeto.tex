@@ -69,7 +69,7 @@
 		Citado #1 vezes nas páginas #2.%
 	\fi}%
 % ---
-
+\renewcommand{\tablename}{Quadro}
 %-----------------------------------------------------------------
 %               INICIO DO DOCUMENTO - CAPA
 %-----------------------------------------------------------------
@@ -94,9 +94,9 @@
 	    \textsc{Interface de Voz da Operação (IVO)}
     }
 	\\[5 cm]Vinicius de Oliveira Jimenez
-    \\Orientador(a): William Francisco da Silva
-    \\Co-orientador(es): Filipe Ventura Muggiati e Hilton Carlos Miranda Lessa
-    \\[2 cm]Foz do Iguaçu, 22 de maio de 2024
+    \\Orientador: William Francisco da Silva
+    \\Coorientadores: Filipe Ventura Muggiati e Hilton Carlos Miranda Lessa
+    \\[2 cm]Foz do Iguaçu, 26 de maio de 2024
     
     
 \end{center}
@@ -123,11 +123,9 @@
         \begin{enumerate}
         	\item Transcrição de fala;
         	\item Síntese de fala;
-        	\item \textit{Speech-To-Text (STT)};
-        	\item \textit{Text-To-Speech (TTS)};
+        	\item \textit{Speech-To-Text} (STT);
+        	\item \textit{Text-To-Speech} (TTS);
         	\item Indústria 4.0;
-        	\item Aplicação web;
-        	\item API.
         \end{enumerate}
 
 
@@ -137,11 +135,11 @@
 %-----------------------------------------------------------------
 \section{Introdução e Justificativa}
 
-A Indústria 4.0 surge a partir de uma nova fase caracterizada pela transformação digital ou informatização, e conectividade. Nesse sentido, a indústria se consolida com umas das principais protagonistas nos avanços em tecnologias, como Internet das Coisas (\textit{Internet of Things} — IoT), computação em nuvem e Inteligência Artificial (IA) \cite{basco2018}. Ainda, de acordo com \citeonline{basco2018}, a IA é um dos 10 (dez) pilares fundamentais da Indústria 4.0, fundamentada na criação de algoritmos capazes de possibilitar que os computadores processem informações com uma velocidade excepcional.
+A Indústria 4.0 surge a partir de uma nova fase caracterizada pela transformação digital ou informatização e conectividade. Nesse sentido, a indústria se consolida com umas das principais protagonistas nos avanços em tecnologias, como Internet das Coisas — \textit{Internet of Things} (IoT), computação em nuvem e Inteligência Artificial (IA) \cite{basco2018}. Ainda, de acordo com \citeonline{basco2018}, a IA é um dos 10 (dez) pilares fundamentais da Indústria 4.0, fundamentada na criação de algoritmos capazes de possibilitar que os computadores processem informações com uma velocidade excepcional.
 
-No contexto industrial, a aplicação de algoritmos de IA possibilita o desenvolvimento de Redes Neurais — \textit{Neural Networks} (NNs), voltadas à automação de processos operacionais complexos e morosos, análise de grande volume de dados, dando apoio à tomada de decisões estratégicas, e resultando em uma gestão mais inteligente e otimizada das estações de trabalho \cite{basco2018}. Com essa finalidade, em 2019, o Departamento de Operação do Sistema (OPS.DT) da Itaipu Binacional (IB), criou um grupo de trabalho para analisar e indicar ações para modernizar os processos da divisão com base nos fundamentos da Industria 4.0.
+No contexto industrial, a aplicação de algoritmos de IA possibilita o desenvolvimento de Redes Neurais — \textit{Neural Networks} (NNs), voltadas à automação de processos operacionais complexos e morosos, análise de grande volume de dados, dando apoio à tomada de decisões estratégicas e resultando em uma gestão mais inteligente e otimizada das estações de trabalho \cite{basco2018}. Com essa finalidade, em 2019, o Departamento de Operação do Sistema (OPS.DT) da Itaipu Binacional (IB), criou um grupo de trabalho para analisar e indicar ações para modernizar os processos da divisão com base nos fundamentos da indústria 4.0.
 
-Este grupo de trabalho realizou uma análise de diversas tecnologias, com destaque para os assistentes virtuais acionados por comandos de voz. Tais sistemas são constituídos por um conjunto de módulos interdependentes, que operam de maneira integrada para viabilizar seu funcionamento. Dentro esses módulos, destaca-se aquele responsável pela conversão de fala em texto — \textit{Speech-To-Text} (STT), e o módulo responsável pela síntese de texto em fala — \textit{Text-To-Speech} (TTS). Diante disso, foi solicitado ao Centro de Gestão Energética (GE.DT) do Itaipu Parquetec o desenvolvimento de um sistema capaz de atender a essas demandas.
+Este grupo de trabalho realizou uma análise de diversas tecnologias, com destaque para os assistentes virtuais acionados por comandos de voz. Tais sistemas são constituídos por um conjunto de módulos interdependentes, que operam de maneira integrada para viabilizar seu funcionamento. Desses módulos, destacam-se aquele responsável pela conversão de fala em texto — \textit{Speech-To-Text} (STT), e o módulo responsável pela síntese de texto em fala — \textit{Text-To-Speech} (TTS). Diante disso, foi solicitado ao Centro de Gestão Energética (GE.DT) do Itaipu Parquetec o desenvolvimento de um sistema capaz de atender a essas demandas.
 
 A tecnologia de transcrição de fala em texto, também conhecida como reconhecimento automático de fala — \textit{Automatic Speech Recognition} (ASR), consiste na identificação de palavras pronunciadas e suas subsequente conversão em texto escrito. Esse campo tem apresentado avanços notáveis em termos de precisão e eficiência, impulsionados principalmente pelo progresso da IA. Um exemplo expressivo desse avanço é a introdução da arquitetura \textit{transformer}, desenvolvida pela Google \cite{vaswani2017}, representando um marco significativo ao permitir processamento de sentenças completas, em vez de palavras isoladas, por meio de mecanismos de atenção capazes de direcionar o foco às partes mais relevantes da entrada (áudio) \cite{utkarsh2024}.
 
@@ -149,7 +147,9 @@ Para \citeonline{tokuda2013}, a síntese de texto para fala é uma técnica util
 
 Diante desse contexto, percebe-se a importância da adoção de um sistema para a realização de conversões \textit{Speech-to-Text} (STT) e \textit{Text-to-Speech} (TTS) no ambiente de supervisão de uma usina, podendo contribuir significativamente para o aumento da agilidade e eficiência operacional nas salas de controle. Em determinadas situações, o esforço cognitivo necessário para solicitar e receber informações por meio da fala é inferior ao exigido por textos escritos, o que possibilita a realização simultânea de múltiplas atividades por um mesmo indivíduo de forma mais intuitiva e natural.
 
-Adicionalmente, ao sistema proposto, especificamente, o módulo de STT, pode ser utilizado para realizar transcrições de ligações telefônicas entre o despachante e o operador nos centros de controle. Essas transcrições podem contribuir para facilitar a passagem de turno das equipes em tempo real, estabelecer conexões entre as ligações, eventos e registros para análises pós-operacionais, além de fornecer uma base de dados consultável para que as equipes revisem conversas anteriores durante o turno. 
+Adicionalmente ao sistema proposto, especificamente, o módulo de STT, pode ser utilizado para realizar transcrições de ligações telefônicas entre o despachante e o operador nos centros de controle. Essas transcrições podem contribuir para facilitar a passagem de turno das equipes em tempo real, estabelecer conexões entre as ligações, eventos e registros para análises pós-operacionais, além de fornecer uma base de dados consultável para que as equipes revisem conversas anteriores durante o turno. 
+
+Em vista disso, a implementação de uma sistema que realize STT e TTS na IB é notável por fornecer insumos tecnológicos para o desenvolvimento de ferramentas que visam à otimização do esforço cognitivo dos Despachantes e Operadores em suas funções de supervisão, concomitantemente à redução do tempo de execução de determinadas atividades. Esta solução projeta uma consequente minimização de falhas e aprimoramento substancial da consciência situacional no ambiente operacional. Adicionalmente, o conteúdo textual gerado por meio deste sistema será um recurso inestimável para as equipes de pós-operação, subsidiando análises aprofundadas de eventos registrados e, por conseguinte, contribuindo para a melhoria contínua dos processos e a segurança sistêmica da operação.
 
 %-----------------------------------------------------------------
 %                       OBJETIVO
@@ -158,7 +158,7 @@ Adicionalmente, ao sistema proposto, especificamente, o módulo de STT, pode ser
 
 \subsection{Objetivo Geral}
 
-Este projeto tem como objetivo geral o desenvolvimento do sistema IVO, voltado à conversão de fala em texto (\textit{Speech-to-Text} – STT) e de texto em fala (\textit{Text-to-Speech} – TTS), bem como ao aprimoramento contínuo dos modelos de reconhecimento de fala. O sistema é composto por quatro aplicações integradas: uma aplicação web piloto, uma aplicação web destinada ao treinamento, uma API\footnote{Interface de programação de aplicações – \textit{Application Programming Interface} (API)} principal e uma API dedicada à IA.
+Este projeto tem como objetivo geral o desenvolvimento do sistema IVO, voltado à conversão de fala em texto (\textit{Speech-to-Text} – STT) e de texto em fala (\textit{Text-to-Speech} – TTS), bem como ao aprimoramento contínuo dos modelos de reconhecimento de fala.
 
 %-------------------------------------------------------------------------------
 
@@ -171,9 +171,9 @@ Dentre os principais objetivos específicos destacam-se:
 	
 	\item Projetar e implementar uma API dedicada à integração e execução dos modelos STT e TTS;
 	
-	\item Estruturar uma API para viabilizar o consumo unificado dos serviços desenvolvidos neste projeto e que internos da IB;
+	\item Estruturar uma API\footnote{Interface de programação de aplicações — \textit{Application Programming Interface} (API).} para viabilizar o consumo unificado dos serviços desenvolvidos neste projeto e internos da IB;
 	
-	\item Desenvolver uma aplicação \textit{web} que permita ao usuário final realizar transcrições de áudio e sínteses de fala consumindo os \textit{endpoints}\footnote{Um endpoint de API é um endereço onde a API recebe pedidos para acessar informações ou serviços disponíveis no servidor. \cite{nosowitz2024}} da API principal;
+	\item Desenvolver uma aplicação \textit{web} que permita ao usuário final realizar transcrições de áudio e sínteses de fala consumindo os \textit{endpoints}\footnote{Um endpoint de API é um endereço onde a API recebe pedidos para acessar informações ou serviços disponíveis no servidor \cite{nosowitz2024}.} da API principal;
 	
 	\item Criar uma aplicação voltada à gestão e ao treinamento de modelos STT. 
 \end{itemize}
@@ -191,9 +191,10 @@ Nessa seção pretende-se a apresentar o plano de trabalho e cronograma de execu
 contemplando as atividades a serem desenvolvidas ao longo do trabalho.
 
 \begin{enumerate}
-	\item  Atividade 1: conduzir uma Revisão Sistemática da Literatura (RSL) com base em critérios bem definidos, a fim de identificar, avaliar e sintetizar pesquisas relevantes sobre tecnologias de transcrição de fala e síntese de fala, bem como arquiteturas utilizadas para a API,  e aplicações \textit{web}; \label{atv1}
+	\item  Atividade 1: conduzir uma Revisão Sistemática da Literatura (RSL) a partir de critérios definidos durante a pesquisa, a fim de identificar, avaliar e sintetizar pesquisas relevantes sobre tecnologias de transcrição de fala e síntese de fala, bem como arquiteturas utilizadas para a API,  e aplicações \textit{web}; \label{atv1}
 	
-	\item Atividade 2: elaborar o documentação do projeto e os protótipos de telas das aplicações piloto e de treinamento. Os artefatos resultantes desta atividade devem ser aprovados pelos responsáveis pelo projeto pelo lado da IB; \label{atv2}
+	
+	\item Atividade 2: elaborar o documentação do projeto, os protótipos de telas das aplicações piloto e de treinamento. Os artefatos resultantes dessa atividade devem ser aprovados pelos responsáveis pelo projeto pelo lado da IB; \label{atv2}
 	
 	
 	\item Atividade 3: desenvolver a API responsável pela integração com os modelos STT e TTS, além de realizar o processo de ajuste fino – \textit{fine-tuning}\footnote{O ajuste fino ou \textit{fine-tuning} em ML é o processo de adaptar um modelo previamente treinado para tarefas ou casos de uso específicos \cite{bergmann2024}.}, para gerar novos modelos STT treinados; \label{atv3}
@@ -216,6 +217,8 @@ Na Tabela \ref{tabela:cronograma} é apresentado o cronograma de execução das 
 \begin{table}[ht]
 	\scriptsize
 	\centering
+	\caption{Cronograma de atividades}
+	\label{tabela:cronograma}
 	\begin{tabular}{|l|c|c|c|c|c|c|c|c|c|}
 		\hline &  \multicolumn{9}{|c|}{\textbf{Período}} \\ \cline{2-10}
 		\textbf{Atividades} & Jun & Jul & Ago & Set & Out & Nov & Dez & Jan & Fev \\ \hline \hline
@@ -228,8 +231,6 @@ Na Tabela \ref{tabela:cronograma} é apresentado o cronograma de execução das 
 		\ref{atv7} - Atividade 7 & & & & & $\bullet$ & $\bullet$ & $\bullet$ &  &  \\ \hline
 		\ref{atv8} - Atividade 8 & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ \\ \hline
 	\end{tabular}
-	\caption{Cronograma de atividades}
-	\label{tabela:cronograma}
 \end{table}
 
 %-----------------------------------------------------------------
@@ -258,7 +259,7 @@ Serão utilizados os seguintes materiais e recursos para a implementação do si
 			\item Versão: 22.04.3 LTS.
 		\end{itemize}
 		
-	\item Máquinas virtuais: serão utilizados duas máquinas virtuais — \textit{Virtual Machine} (VM) para realizar o \textit{deploy}\footnote{O \textit{deploy} de uma aplicação consiste em torná-la acessível para que possa ser utilizada por usuários finais ou integrada a outros sistemas \cite{ibm2025}} das aplicações necessárias. As VMs contam com as seguintes configurações:
+	\item Máquinas virtuais: serão utilizados duas máquinas virtuais — \textit{Virtual Machine} (VM) para realizar o \textit{deploy}\footnote{O \textit{deploy} de uma aplicação consiste em torná-la acessível para que possa ser utilizada por usuários finais ou integrada a outros sistemas \cite{ibm2025}.} das aplicações necessárias. As VMs contam com as seguintes configurações:
 		\begin{itemize}
 			\item VM IVO API
 				\begin{itemize}
@@ -277,7 +278,7 @@ Serão utilizados os seguintes materiais e recursos para a implementação do si
 		\end{itemize}
 		
 		
-	\item Gerenciamento de contêineres: será utilizado a ferramenta Podman que se destaca por ser \textit{open-source} não depender de um \textit{daemon}, tornando-o um alternativa segura e acessível \cite{redhat2024}. Além disso, é a tecnologia adotada pela IB;
+	\item Gerenciamento de contêineres: será utilizado a ferramenta Podman que se destaca por ser \textit{open-source} não depender de um \textit{daemon}, tornando-o um alternativa segura e acessível \cite{redhat2024}. Além disso, é a tecnologia adotada pela IB.
 \end{itemize}
 
 
@@ -288,7 +289,7 @@ Os métodos adotados para a realização das atividades serão organizados de ac
 \begin{itemize}
 	\item \textbf{Revisão Sistemática da Literatura (RSL)}
 	
-		Realizar busca por referências bibliográficas utilizando a abordagem RSL. De acordo com \citeonline{galvao2019}, a ênfase desta técnica de revisão recai sobre a reprodutibilidade por parte de outros pesquisadores, detalhando de maneira explícita as bases de dados bibliográficas utilizadas, as estratégias de busca adotadas, em cada uma delas, o processo de seleção de artigos e textos científicos, bem como os critérios estabelecidos para inclusão e exclusão.
+		Realizar busca por referências bibliográficas utilizando a abordagem RSL. De acordo com \citeonline{galvao2019}, a ênfase dessa técnica de revisão recai sobre a reprodutibilidade por parte de outros pesquisadores, detalhando de maneira explícita as bases de dados bibliográficas utilizadas, as estratégias de busca adotadas, em cada uma delas, o processo de seleção de artigos e textos científicos, bem como os critérios estabelecidos para inclusão e exclusão.
 		
 	\item \textbf{Documentação e prototipagem}
 	
@@ -297,7 +298,7 @@ Os métodos adotados para a realização das atividades serão organizados de ac
 	
 	\item \textbf{Desenvolvimento das APIs}
 	
-		Inicialmente, criar os repositórios no GitLab\footnote{Site oficial do GitLab: \url{https://about.gitlab.com/}} interno do GE.DT. Após essa etapa inicial, iniciar a implementação das arquiteturas escolhidas para cada API, definindo suas devidas bibliotecas, o Sistema Gerenciador de Banco de Dados (SGBD) a ser utilizado. Para o caso da API de STT e TTS, definir modelos \textit{base} para testes iniciais. Ja à API principal, estudar métodos de comunicação entre as APIs. A autenticação e autorização será realizada utilizando o servidor de autenticação Keycloak\footnote{Site oficial do Keycloak: \url{https://www.keycloak.org/}}, utilizando a técnica de \textit{Single Sign-On} (SSO)\footnote{Single sign-on (SSO) é um método de login que permite ao usuário acessar vários sistemas usando um somente as credenciais, sem precisar se autenticar novamente em cada aplicação \cite{scapicchio2024}.}. 
+		Inicialmente, criar os repositórios no GitLab\footnote{Site oficial do GitLab: \url{https://about.gitlab.com/}} interno do GE.DT. Após essa etapa inicial, iniciar a implementação das arquiteturas escolhidas para cada API, definindo suas devidas bibliotecas, o Sistema Gerenciador de Banco de Dados (SGBD) a ser utilizado. Para o caso da API de STT e TTS, definir modelos \textit{base} para testes iniciais. Ja à API principal, estudar métodos de comunicação entre as APIs. A autenticação e autorização serão realizadas por meio do servidor de autenticação Keycloak\footnote{Site oficial do Keycloak: \url{https://www.keycloak.org/}}, utilizando a técnica de \textit{Single Sign-On} (SSO)\footnote{Single sign-on (SSO) é um método de login que permite ao usuário acessar vários sistemas usando somente as credenciais, sem precisar se autenticar novamente em cada aplicação \cite{scapicchio2024}.}. 
 	
 	\item \textbf{Desenvolvimento das aplicações web}
 	
@@ -317,7 +318,6 @@ Os resultados obtidos serão avaliados com base no desempenho das aplicações q
 %                       REFERÊNCIAS
 %----------------------------------------------------------------- 
 
-\newpage
 \renewcommand\refname{}
 \section{Referências}
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.5.16)  21 MAY 2025 22:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.5.16)  26 MAY 2025 20:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -467,30 +467,6 @@ File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 \l__pdf_internal_box=\box53
 ) (ante-projeto.aux
 
-LaTeX Warning: Label `barakat2024' multiply defined.
-
-
-LaTeX Warning: Label `barakat2024++EXPL' multiply defined.
-
-
-LaTeX Warning: Label `barakat2024++IMPL' multiply defined.
-
-
-LaTeX Warning: Label `barakat2024++YEAR' multiply defined.
-
-
-LaTeX Warning: Label `basco2018' multiply defined.
-
-
-LaTeX Warning: Label `basco2018++EXPL' multiply defined.
-
-
-LaTeX Warning: Label `basco2018++IMPL' multiply defined.
-
-
-LaTeX Warning: Label `basco2018++YEAR' multiply defined.
-
-
 LaTeX Warning: Label `galvao2019' multiply defined.
 
 
@@ -597,60 +573,61 @@ LaTeX Font Warning: Font shape `T1/lmr/bx/sc' undefined
 {C:/Users/vinicius.jimenez/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:
 /Users/vinicius.jimenez/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.
 enc}] [2] [3]
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
+70.
+
+(C:\Users\vinicius.jimenez\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
-61.
+74.
 
 (C:\Users\vinicius.jimenez\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )<<ot1.cmap>>
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
-61.
+74.
 
 (C:\Users\vinicius.jimenez\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )<<oml.cmap>>
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-161.
+174.
 
 (C:\Users\vinicius.jimenez\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.f
 d
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )<<oms.cmap>>
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-161.
+174.
 
 (C:\Users\vinicius.jimenez\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.f
 d
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 161.
+(Font)              <12> on input line 174.
 <<omx.cmap>>
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 161.
+(Font)              <8> on input line 174.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 161.
+(Font)              <6> on input line 174.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 161.
+(Font)              <10> on input line 174.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 161.
+(Font)              <7> on input line 174.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 161.
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
-70.
-
-(C:\Users\vinicius.jimenez\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
-File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [4{C:/Users/vinicius.jimenez/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm
-/lm-ts1.enc}] [5] [6{C:/Users/vinicius.jimenez/AppData/Local/Programs/MiKTeX/fo
-nts/enc/dvips/lm/lm-mathsy.enc}
+(Font)              <5> on input line 174.
+ [4{C:/Users/vinicius.jimenez/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/
+lm-ts1.enc}] [5] [6
 pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.265 					\item S
-                  istema Operacional: Ubuntu 22.04 LTS;]
-Overfull \hbox (5.83083pt too wide) in paragraph at lines 295--296
+l.263 		\begin{itemize}
+                       {C:/Users/vinicius.jimenez/AppData/Local/Programs/MiKTeX
+/fonts/enc/dvips/lm/lm-mathsy.enc}]
+Overfull \hbox (5.83083pt too wide) in paragraph at lines 296--297
 []\T1/lmr/m/n/12 Escrever a do-cu-men-ta-ção do pro-jeto em-pre-gando os pa-drõ
 es do cen-tro GE.DT.
  []
@@ -661,18 +638,6 @@ es do cen-tro GE.DT.
 
  [9]) (sintese.tex
 (ante-projeto.brf)
-pdfTeX warning (ext4): destination with the same identifier (name{cite.barakat2
-024}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.10 	
-      
-pdfTeX warning (ext4): destination with the same identifier (name{cite.basco201
-8}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.14 	
-      
 pdfTeX warning (ext4): destination with the same identifier (name{cite.galvao20
 19}) has been already used, duplicate ignored
 <to be read again> 
@@ -695,16 +660,16 @@ LaTeX Warning: There were multiply-defined labels.
 Package rerunfilecheck Info: File `ante-projeto.out' has not changed.
 (rerunfilecheck)             Checksum: 97CF50656F1E1FB2573F12769B689188;2036.
 Package rerunfilecheck Info: File `ante-projeto.brf' has not changed.
-(rerunfilecheck)             Checksum: BBB839DFB595300E236094EEC403E12A;671.
+(rerunfilecheck)             Checksum: 0175CF55DF325A0C43690540100122A5;670.
  ) 
 Here is how much of TeX's memory you used:
- 11923 strings out of 474486
- 196845 string characters out of 5738563
- 1946542 words of memory out of 5000000
- 33876 multiletter control sequences out of 15000+600000
+ 11939 strings out of 474486
+ 197037 string characters out of 5738563
+ 1945542 words of memory out of 5000000
+ 33892 multiletter control sequences out of 15000+600000
  624644 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,9n,79p,971b,657s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,9n,79p,969b,649s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 pdfTeX warning (dest): name{Hfootnote.10} has been referenced but does not exis
 t, replaced by a fixed one
@@ -757,9 +722,9 @@ s/vinicius.jimenez/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.p
 fb><C:/Users/vinicius.jimenez/AppData/Local/Programs/MiKTeX/fonts/type1/public/
 lm/lmri12.pfb><C:/Users/vinicius.jimenez/AppData/Local/Programs/MiKTeX/fonts/ty
 pe1/public/lm/lmsy8.pfb>
-Output written on ante-projeto.pdf (10 pages, 310282 bytes).
+Output written on ante-projeto.pdf (10 pages, 310401 bytes).
 PDF statistics:
- 293 PDF objects out of 1000 (max. 8388607)
+ 290 PDF objects out of 1000 (max. 8388607)
  66 named destinations out of 1000 (max. 500000)
  133 words of extra memory for PDF output out of 10000 (max. 10000000)
 
